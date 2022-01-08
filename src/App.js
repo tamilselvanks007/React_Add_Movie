@@ -49,7 +49,7 @@ export default function App() {
         "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism.",
     },
 
-    { 
+    {
       name: "Joker (2019)",
       poster:
         "https://i.pinimg.com/originals/63/7f/e8/637fe8db538df2456654553cdf02d55c.jpg",
@@ -94,57 +94,55 @@ export default function App() {
 
   return (
     <div className="App">
-
-    <div className="add-movie-form">
-      <input
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-        placeholder="Name"
+      <div className="add-movie-form">
+        <input
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder="Name"
         />
 
-      <input
-        value={poster}
-        onChange={(event) => setPoster(event.target.value)}
-        placeholder="Poster"
+        <input
+          value={poster}
+          onChange={(event) => setPoster(event.target.value)}
+          placeholder="Poster"
         />
 
-      <input
-        value={rating}
-        onChange={(event) => setRating(event.target.value)}
-        placeholder="Rating"
+        <input
+          value={rating}
+          onChange={(event) => setRating(event.target.value)}
+          placeholder="Rating"
         />
 
-      <input
-        value={summary}
-        onChange={(event) => setSummary(event.target.value)}
-        placeholder="Summary"
+        <input
+          value={summary}
+          onChange={(event) => setSummary(event.target.value)}
+          placeholder="Summary"
         />
-        <button 
-        onClick={() => {
+        <button
+          onClick={() => {
             const newMovie = {
               name: name,
               poster: poster,
               rating: rating,
-              summary: summary
+              summary: summary,
             };
-          setMovielist([...movielist, newMovie]); 
-        }}
+            setMovielist([...movielist, newMovie]);
+          }}
         >
           Add Movie
         </button>
-        </div>
-      
+      </div>
 
       <section className="movie-list">
         {movielist.map((movie) => (
-        <Hollywood
-          name={movie.name}
-          poster={movie.poster}
-          imdb={movie.imdb}
-          summary={movie.summary}
-        />
-      ))}
-      </section>     
+          <Hollywood
+            name={movie.name}
+            poster={movie.poster}
+            imdb={movie.imdb}
+            summary={movie.summary}
+          />
+        ))}
+      </section>
     </div>
   );
 }
